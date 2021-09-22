@@ -1,0 +1,111 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  width: 400px;
+  height: 400px;
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+}
+
+.link {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.date,
+.bio {
+  text-align: center;
+  font-size: 18px;
+}
+
+.visible {
+  visibility: hidden;
+  display: none;
+}
+
+
+@keyframes preloader_container {
+   0% { transform: translate(12.24px,81.6px) scale(0); }
+  25% { transform: translate(12.24px,81.6px) scale(0); }
+  50% { transform: translate(12.24px,81.6px) scale(1); }
+  75% { transform: translate(81.6px,81.6px) scale(1); }
+ 100% { transform: translate(150.96px,81.6px) scale(1); }
+}
+
+@keyframes preloader_container-r {
+   0% { transform: translate(150.96px,81.6px) scale(1): }
+ 100% { transform: translate(150.96px,81.6px) scale(0); }
+}
+
+@keyframes preloader_container-c {
+   0% { background: #facd9e }
+  25% { background: #f19d3b }
+  50% { background: #459448 }
+  75% { background: #389798 }
+ 100% { background: #facd9e }
+}
+
+.preloader_container div {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 40.8px;
+  height: 40.8px;
+  border-radius: 50%;
+  transform: translate(81.6px,81.6px) scale(1);
+  background: #facd9e;
+  animation: preloader_container 2.6315789473684212s infinite cubic-bezier(0,0.5,0.5,1);
+}
+
+.preloader_container div:nth-child(1) {
+  background: #389798;
+  transform: translate(150.96px,81.6px) scale(1);
+  animation: preloader_container-r 0.6578947368421053s infinite cubic-bezier(0,0.5,0.5,1), preloader_container-c 2.6315789473684212s infinite step-start;
+}
+
+.preloader_container div:nth-child(2) {
+  animation-delay: -0.6578947368421053s;
+  background: #facd9e;
+}
+
+.preloader_container div:nth-child(3) {
+  animation-delay: -1.3157894736842106s;
+  background: #389798;
+}
+
+.preloader_container div:nth-child(4) {
+  animation-delay: -1.9736842105263157s;
+  background: #459448;
+}
+
+.preloader_container div:nth-child(5) {
+  animation-delay: -2.6315789473684212s;
+  background: #f19d3b;
+}
+
+.preloader {
+  width: 204px;
+  height: 204px;
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.preloader_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+
+.preloader_container div {
+  box-sizing: content-box;
+}
